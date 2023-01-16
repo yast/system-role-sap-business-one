@@ -1,0 +1,5 @@
+-------------------------------------------------------------------
+Mon Jan 16 09:18:31 UTC 2023 - Peter Varkoly <varkoly@suse.com>
+
+- Initial version. Impl: Automatic Setup for SAP BusinessOne
+  (jsc#3111)
