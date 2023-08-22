@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Aug 22 13:54:57 UTC 2023 - Peter Varkoly <varkoly@suse.com>
+
+- SAP Business One installer does a strange partitioning
+  (bsc#1212652) 
+- 15.4.1
+
+-------------------------------------------------------------------
 Thu Mar 23 14:20:56 UTC 2023 - Peter Varkoly <varkoly@suse.com>
 
 - Initial version. Impl: Automatic Setup for SAP BusinessOne
