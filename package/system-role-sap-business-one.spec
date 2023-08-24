@@ -36,7 +36,7 @@ BuildRequires:  yast2-installation-control >= 4.0.0
 
 Url:            https://github.com/yast/system-role-sap-business-one
 AutoReqProv:    off
-Version:        15.6.0
+Version:        15.6.1
 Release:        0
 Summary:        Server SAP Business One role definition
 License:        MIT
