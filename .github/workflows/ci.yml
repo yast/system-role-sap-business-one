@@ -6,11 +6,61 @@ name: CI
 on: [push, pull_request]
 
 jobs:
+  Tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        distro:  [ "tumbleweed", "leap_latest" ]
+
+    container:
+      image: registry.opensuse.org/yast/head/containers_${{matrix.distro}}/yast-ruby
+
+    steps:
+
+    - name: Git Checkout
+      uses: actions/checkout@v2
+
+    # FIXME: optionally install the missing dependencies
+    # - name: Install Dependencies
+    #   run: zypper --non-interactive install foobar
+
+    # just for easier debugging...
+    - name: Inspect Installed Packages
+      run: rpm -qa | sort
+
+    # send the coverage report to coveralls.io
+    - name: Coveralls Report
+      # send it only from the TW build to avoid duplicate submits
+      if: ${{ matrix.distro == 'tumbleweed' }}
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  Rubocop:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        distro: [ "leap_latest" ]
+
+    container:
+      image: registry.opensuse.org/yast/head/containers_${{matrix.distro}}/yast-ruby
+
+    steps:
+
+    - name: Git Checkout
+      uses: actions/checkout@v2
+
   Package:
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
+      matrix:
+        distro:  [ "tumbleweed", "leap_latest" ]
 
     container:
       image: registry.opensuse.org/yast/head/containers_${{matrix.distro}}/yast-ruby
@@ -23,13 +73,13 @@ jobs:
     - name: Package Build
       run: yast-ci-ruby -o package
 
-  # downloading the Docker image takes some time so bundling several fast
-  # checks into one job avoids that overhead
-  Checks:
+  Yardoc:
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
+      matrix:
+        distro: [ "leap_latest" ]
 
     container:
       image: registry.opensuse.org/yast/head/containers_${{matrix.distro}}/yast-ruby
@@ -39,13 +89,21 @@ jobs:
     - name: Git Checkout
       uses: actions/checkout@v2
 
-    # just for easier debugging...
-    - name: Inspect Installed Packages
-      run: rpm -qa | sort
+  # downloading the Docker image takes some time so bundling several fast
+  # checks into one job avoids that overhead
+  Checks:
+    runs-on: ubuntu-latest
 
-    # run checks
-    - name: XML Check
-      run: make -C control check
+    strategy:
+      fail-fast: false
+      matrix:
+        distro: [ "leap_latest" ]
 
-    - name: POT Check
-      run: rake check:pot
+    container:
+      image: registry.opensuse.org/yast/head/containers_${{matrix.distro}}/yast-ruby
+
+    steps:
+
+    - name: Git Checkout
+      uses: actions/checkout@v2
+
