@@ -40,7 +40,8 @@
                     <fs_type>btrfs</fs_type>
                     <desired_size config:type="disksize">60 GiB</desired_size>
                     <min_size config:type="disksize">40 GiB</min_size>
-                    <max_size config:type="disksize">80 GiB</max_size>
+                    <max_size config:type="disksize">unlimited</max_size>
+                    <weight config:type="integer">1</weight>
                     <!-- Always use snapshots, no matter what -->
                     <snapshots config:type="boolean">true</snapshots>
                     <snapshots_configurable config:type="boolean">false</snapshots_configurable>
