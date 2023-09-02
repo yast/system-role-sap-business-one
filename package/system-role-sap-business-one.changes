@@ -1,4 +1,14 @@
 -------------------------------------------------------------------
+Sat Sep  2 16:28:13 UTC 2023 - Peter Varkoly <varkoly@suse.com>
+
+- Require sap_bone pattern as default
+  bone-installation-wizard causes problems in the module definitions
+  (bsc#1214821)
+- SAP Business One installer does a strange partitioning (bsc#1212652)
+  Use all available place for the root partition.
+- 15.6.2
+
+-------------------------------------------------------------------
 Thu Mar 23 14:29:32 UTC 2023 - Peter Varkoly <varkoly@suse.com>
 
 - Bump to new version

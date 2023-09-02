@@ -46,7 +46,6 @@ Source:         %{name}-%{version}.tar.bz2
 Provides:       installer_module_extension() = system-role-sap-business-one
 Provides:       extension_for_product() = SLES
 Provides:       extension_for_product() = SLES_BCL
-Provides:       extension_for_product() = SLES_SAP
 
 %description
 Meta package for Server SAP Business One role definition.
