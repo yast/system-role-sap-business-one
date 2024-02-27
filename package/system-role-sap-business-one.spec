@@ -36,7 +36,7 @@ BuildRequires:  yast2-installation-control >= 4.0.0
 
 Url:            https://github.com/yast/system-role-sap-business-one
 AutoReqProv:    off
-Version:        5.0.0
+Version:        5.0.2
 Release:        0
 Summary:        Server SAP Business One role definition
 License:        MIT
@@ -46,7 +46,6 @@ Source:         %{name}-%{version}.tar.bz2
 Provides:       installer_module_extension() = system-role-sap-business-one
 Provides:       extension_for_product() = SLES
 Provides:       extension_for_product() = SLES_BCL
-Provides:       extension_for_product() = SLES_SAP
 
 %description
 Meta package for Server SAP Business One role definition.
