@@ -1,17 +1,30 @@
 -------------------------------------------------------------------
-Fri Sep 01 19:57:03 UTC 2023 - Josef Reidinger <jreidinger@suse.com>
+Tue Feb 27 10:47:00 UTC 2024 - Peter Varkoly <varkoly@suse.com>
+
+- Remove sap_bone as requirement. This pattern contains packages which
+  are member of legacy module which must not be required by any product.
+  (bsc#1220381)
+- 15.6.1
+
+-------------------------------------------------------------------
+Sat Sep  2 16:28:13 UTC 2023 - Peter Varkoly <varkoly@suse.com>
 
 - Branch package for SP6 (bsc#1208913)
+- Require sap_bone pattern as default
+  bone-installation-wizard causes problems in the module definitions
+  (bsc#1214821)
+- SLE-Module-SAP-Business-One can not be installed for SLE-Module-SAP-Applications
+- 15.6.0
 
 -------------------------------------------------------------------
 Tue Aug 22 13:54:57 UTC 2023 - Peter Varkoly <varkoly@suse.com>
 
 - SAP Business One installer does a strange partitioning
-  (bsc#1212652) 
+  (bsc#1212652)
 - 15.5.1
 
 -------------------------------------------------------------------
-Thu Mar 23 14:20:56 UTC 2023 - Peter Varkoly <varkoly@suse.com>
+Mon Jan 16 09:18:31 UTC 2023 - Peter Varkoly <varkoly@suse.com>
 
 - Initial version. Impl: Automatic Setup for SAP BusinessOne
-  (jsc#3112)
+  (jsc#PED-3111)
