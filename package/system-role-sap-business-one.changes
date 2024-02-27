@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Tue Feb 27 10:47:00 UTC 2024 - Peter Varkoly <varkoly@suse.com>
+
+- Remove sap_bone as requirement. This pattern contains packages which
+  are member of legacy module which must not be required by any product.
+  (bsc#1220381)
+- 15.6.1
+
+-------------------------------------------------------------------
 Sat Sep  2 16:28:13 UTC 2023 - Peter Varkoly <varkoly@suse.com>
 
 - Require sap_bone pattern as default
