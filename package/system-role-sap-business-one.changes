@@ -4,7 +4,7 @@ Tue Feb 27 10:47:00 UTC 2024 - Peter Varkoly <varkoly@suse.com>
 - Remove sap_bone as requirement. This pattern contains packages which
   are member of legacy module which must not be required by any product.
   (bsc#1220381)
-- 15.6.1
+- 5.0.2
 
 -------------------------------------------------------------------
 Sat Sep  2 16:28:13 UTC 2023 - Peter Varkoly <varkoly@suse.com>
@@ -13,7 +13,12 @@ Sat Sep  2 16:28:13 UTC 2023 - Peter Varkoly <varkoly@suse.com>
   bone-installation-wizard causes problems in the module definitions
   (bsc#1214821)
 - SLE-Module-SAP-Business-One can not be installed for SLE-Module-SAP-Applications
-- 15.6.0
+- 5.0.1
+
+-------------------------------------------------------------------
+Wed Aug 30 20:16:10 UTC 2023 - Josef Reidinger <jreidinger@suse.cz>
+
+- 5.0.0 (bsc#1185510)
 
 -------------------------------------------------------------------
 Tue Aug 22 13:54:57 UTC 2023 - Peter Varkoly <varkoly@suse.com>
